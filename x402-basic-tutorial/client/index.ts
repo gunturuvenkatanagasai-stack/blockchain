@@ -17,7 +17,9 @@ if (!avmMnemonic) {
     );
 }
 
-const url = "http://localhost:4021/weather";
+// Choose your resource server by uncommenting one of these:
+const url = "http://localhost:4021/weather";  // Local resource server
+// const url = "https://your-deployed-server.com/weather";  // Hosted resource server
 
 async function main(): Promise<void> {
     const secretKey = await getSecretKeyFromMnemonic(avmMnemonic);
