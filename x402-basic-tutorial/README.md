@@ -5,7 +5,11 @@ This folder follows the [x402 on Algorand tutorial](https://dev.algorand.co/reso
 ## Structure
 
 - **client/** — Client that pays for API access
-- **server/** — Resource server that charges for endpoints
+- **server/** — Resource server that charges for endpoints with Bazaar discovery catalog listing
+
+## Bazaar Discovery
+
+The server integrates with the [GoPlausible Bazaar](https://facilitator.goplausible.xyz/discovery/resources), a public marketplace where endpoints are automatically cataloged after payments settle. Agents and buyers can discover and autonomously call your protected resources. Metadata (URL, method, price, schema) is declared once per route and flows into the catalog on first real payment settlement.
 
 ## Quick Start
 
@@ -45,15 +49,10 @@ pnpm install
 pnpm start
 ```
 
-#### In client/index.ts, uncomment the local URL:
-```typescript
-// const url = 'https://x402.goplausible.xyz/examples/weather';
-const url = 'http://localhost:4021/weather';
-```
-
-#### Start the client:
+#### Start the client (in another terminal):
 ```bash
 cd client
+pnpm install
 pnpm start
 ```
 
