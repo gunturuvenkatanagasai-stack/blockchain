@@ -36,6 +36,9 @@ Five client implementations showing different approaches to the x402 payment pro
 ### **server/hono/** — Resource Server
 The policy enforcer. Protects your API endpoints with x402 payment requirements. Issues 402 responses with pricing and merchant information. All actual payment verification is delegated to the Facilitator.
 
+### **server/bazaar-integration/** — Bazaar Discovery
+Resource server with GoPlausible Bazaar catalog integration. Endpoints are automatically discoverable in the public Bazaar marketplace after real payments settle. Three example endpoints showcase GET and POST discovery patterns.
+
 ### **facilitator/basic/** — Settlement Service
 The truth machine. Verifies payment signatures, submits transactions to Algorand, and confirms on-chain settlement. Stateless and trustless—never holds keys or funds.
 
