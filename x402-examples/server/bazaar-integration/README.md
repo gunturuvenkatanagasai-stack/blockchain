@@ -72,7 +72,7 @@ You should see:
 
 2. **Settle a real payment per endpoint** against your public URL
    ```bash
-   SELLER_URL=https://<your-app> cd ../client/fetch && pnpm start
+   cd ../client/fetch && SELLER_URL=https://<your-app> pnpm start
    ```
    Each settlement adds that endpoint to the Bazaar catalog.
 

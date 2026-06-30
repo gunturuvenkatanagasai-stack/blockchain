@@ -13,7 +13,7 @@
     "@x402/avm": "^2.11.0",
     "@x402/core": "^2.11.0",
     "@x402/hono": "^2.11.0",
-    "@x402-avm/extensions": "latest",
+    "@x402-avm/extensions": "^2.6.1",
     "dotenv": "^16.4.5",
     "hono": "^4.1.0"
   },
