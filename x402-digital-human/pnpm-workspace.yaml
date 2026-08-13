@@ -1,0 +1,20 @@
+packages:
+  - 'apps/*'
+  - 'services/*'
+  - 'packages/*'
+  - 'contracts'
+  - 'tests'
+
+allowBuilds:
+  '@prisma/client': true
+  '@prisma/engines': true
+  keccak: true
+  prisma: true
+  secp256k1: true
+
+onlyBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - 'keccak'
+  - 'prisma'
+  - 'secp256k1'

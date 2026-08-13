@@ -41,8 +41,14 @@ async function main(): Promise<void> {
         const body = await response.json();
         console.log("\n✅ Resource received:", JSON.stringify(body, null, 2));
     } else {
-        console.error("❌ Request failed:", response.status);
-        const error = await response.json();
+        console.error("❌ Request status:", response.status, response.statusText);
+        const paymentHeader = response.headers.get("payment-required");
+        if (paymentHeader) {
+            const decoded = JSON.parse(Buffer.from(paymentHeader, "base64").toString("utf-8"));
+            console.log("\n🔒 x402 Payment Challenge Required:");
+            console.log(JSON.stringify(decoded, null, 2));
+        }
+        const error = await response.json().catch(() => ({}));
         console.error(error);
     }
 }

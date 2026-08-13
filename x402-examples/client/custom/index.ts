@@ -94,8 +94,11 @@ async function main(): Promise<void> {
     // Custom selector - pick which payment option to use
     // This selects the second payment option (Solana)
     // Create your own logic here to select preferred payment option
-    const selectPayment = (_version: number, requirements: PaymentRequirements[]) => {
+    const selectPayment = (_version: number, requirements: PaymentRequirements[]): PaymentRequirements => {
         const selected = requirements[0];
+        if (!selected) {
+            throw new Error("No payment requirements provided");
+        }
         console.log(`🎯 Selected: ${selected.network} / ${selected.scheme}`);
         return selected;
     };

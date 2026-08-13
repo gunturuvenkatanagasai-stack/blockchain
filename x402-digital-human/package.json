@@ -1,0 +1,31 @@
+{
+  "name": "x402-digital-human-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Digital Human Marketplace - Every Human's Knowledge Can Earn Forever",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:api": "npm --prefix services/api run dev",
+    "dev:ai": "npm --prefix services/ai run dev",
+    "dev:web": "npm --prefix apps/web run dev",
+    "test": "jest",
+    "lint": "eslint . --ext .ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "db:generate": "prisma generate --schema=packages/database/prisma/schema.prisma",
+    "db:push": "prisma db push --schema=packages/database/prisma/schema.prisma"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "concurrently": "^8.2.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
+  }
+}
